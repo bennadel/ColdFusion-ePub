@@ -1,0 +1,86 @@
+﻿<?xml version="1.0"?>
+<package 
+	version="2.0"
+	xmlns="http://www.idpf.org/2007/opf"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:opf="http://www.idpf.org/2007/opf"
+	unique-identifier="BookId">
+
+	<!-- This contains meta information about the book. -->
+	<metadata 
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:opf="http://www.idpf.org/2007/opf">
+
+		<dc:title>${title}</dc:title>
+		<dc:creator opf:role="aut">${author}</dc:creator>
+		<dc:language>en-US</dc:language>
+		<dc:rights>Public Domain</dc:rights>
+		<dc:publisher>${publisher}</dc:publisher>
+		<dc:identifier id="BookId">urn:uuid:${bookID}</dc:identifier>
+	
+	</metadata>
+	
+	<!-- This is a list of the ePub book assets. -->
+	<manifest>
+	
+		<item 
+			id="ncx"
+			href="toc.ncx"
+			media-type="application/x-dtbncx+xml" />
+		
+		<item
+			id="style"
+			href="stylesheet.css"
+			media-type="text/css"
+			/>
+			
+		<!-- This is for Adobe Digital Editions. -->
+		<item
+			id="pagetemplate"
+			href="page-template.xpgt"
+			media-type="application/vnd.adobe-page-template+xml"
+			/>
+			
+		<!--
+		<item
+			id="pagetemplate"
+			href="page-template.xpgt"
+			media-type="application/vnd.adobe-page-template+xml"
+			/>
+		-->
+		
+		<!-- SECTIONS - There will be one or more of these. -->
+		<!--
+		<item
+			id="titlepage"
+			href="title_page.xhtml"
+			media-type="application/xhtml+xml"
+			/>
+		-->
+		
+		<!-- IMAGES - There will be zero or more of these. -->
+		<!--
+		<item
+			id="imgl"
+			href="images/sample.png"
+			media-type="image/png"
+			/>
+		-->
+		
+	</manifest>
+	
+	<!-- 
+		This provides information about the table of contents. This 
+		is not used by all ePub readers. A formatted XHTML page should 
+		be create in its stead. 
+	-->
+	<spine toc="ncx">
+		
+		<!-- SECTIONS - There will be one or more of these. -->
+		<!--
+		<itemref idref="titlepage" />
+		-->
+	
+	</spine>
+	
+</package>
